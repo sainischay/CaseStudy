@@ -106,7 +106,7 @@ namespace CrimeAnalysisAndReportingSystem.Repositories
 
         public List<Incident> SearchIncidents(string incidentType)
         {
-            if (!incidentStatus.Contains(incidentType))
+            if (!incidentType.Contains(incidentType))
                 throw new IncidentTypeViolation("Wrong IncidentType Option Choose from Robbery,Theft,Homicide");
             List<Incident> incidents = new List<Incident>();
             using (SqlConnection connection = new SqlConnection(databaseConnectionString))
